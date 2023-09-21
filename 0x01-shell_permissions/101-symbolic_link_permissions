@@ -1,0 +1,2 @@
+#!/bin/bash
+chpwn -h vincent staff _hello
