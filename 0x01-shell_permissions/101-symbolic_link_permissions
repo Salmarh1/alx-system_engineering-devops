@@ -1,2 +1,2 @@
 #!/bin/bash
-chpwn -h vincent staff _hello
+chpwn -h vincent:staff _hello
