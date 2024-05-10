@@ -7,14 +7,14 @@ def number_of_subscribers(subreddit):
     response = requests.get(url, headers=headers)
     
     # Check for errors
-    if response.status_code != 200:
-        return 0
-    
-    # Parse JSON response
-    data = response.json()
-    subscribers = data["data"]["subscribers"]
-    
-    return subscribers
+    if response.status_code == 200:
+        data = response.json()
+        subscribers = data["data"]["subscribers"]
+        return subscribers
+    elif response.status_code == 404:
+        return 0  # Subreddit not found
+    else:
+        return -1  # Other error occurred
 
 if __name__ == "__main__":
     subreddit = input("Enter subreddit: ")
